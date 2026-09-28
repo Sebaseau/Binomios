@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Binomios con un término en común · Ruta de experto</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1f8;--card:#fff;--ink:#1e1433;--mut:#625a75;--line:#ded8ea;--p:#3b2470;--c:#d9452e;--t:#0f7f7a;--acc:#3b2470;--onacc:#fff;--soft:#ebe6f5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#120d1f;--card:#1b1430;--ink:#f1edfa;--mut:#a89fc0;--line:#2f2350;--p:#b9a2ff;--c:#ff8a72;--t:#4fd6cf;--acc:#b9a2ff;--onacc:#120d1f;--soft:#251a42}}
+:root[data-theme="dark"]{--bg:#120d1f;--card:#1b1430;--ink:#f1edfa;--mut:#a89fc0;--line:#2f2350;--p:#b9a2ff;--c:#ff8a72;--t:#4fd6cf;--acc:#b9a2ff;--onacc:#120d1f;--soft:#251a42}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 'DM Sans',system-ui,sans-serif}
+h1,h2,h3{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.15;margin:0 0 .5em}
+h2{font-size:2rem}h3{font-size:1.3rem}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 20px;max-width:1160px;margin:0 auto;flex-wrap:wrap}
+.logo{font-family:'DM Serif Display',Georgia,serif;font-size:1.2rem}
+.crumbs{color:var(--mut);font-size:.85rem}
+.tools{display:flex;gap:8px}
+input,button{font:inherit;color:inherit}
+.tools input,.fld{padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.tools input{width:150px}
+.btn{cursor:pointer;border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:8px}
+.btn:hover{border-color:var(--acc)}
+.pri{background:var(--acc);color:var(--onacc);font-weight:700;padding:12px 24px;text-decoration:none;display:inline-block;border-radius:99px}
+#prog{height:4px;width:0;background:linear-gradient(90deg,var(--p),var(--c),var(--t))}
+:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.blk{display:inline-block;font-size:.78rem;font-weight:700;background:var(--acc);color:var(--onacc);border-radius:6px;padding:2px 10px;margin:0 0 10px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.hero{padding:56px 0 36px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem)}
+.big{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(1.3rem,4.4vw,2.6rem);background:var(--soft);border-radius:16px;padding:22px;margin:18px 0;overflow-x:auto;white-space:nowrap}
+.pl{color:var(--p);font-weight:700}.co{color:var(--c);font-weight:700}.te{color:var(--t);font-weight:700}
+.sub{max-width:62ch;color:var(--mut);font-size:1.1rem}
+.metrics{display:flex;gap:30px;flex-wrap:wrap;margin:16px 0}.metrics b{display:block;font-size:1.2rem}.metrics span{color:var(--mut);font-size:.85rem}
+.tag{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:2px 12px;font-size:.85rem;margin:2px 4px 2px 0}
+.road{display:flex;gap:10px;flex-wrap:wrap;list-style:none;padding:0;margin:22px 0}
+.road a{display:block;text-decoration:none;padding:10px 16px;border:1px solid var(--line);border-radius:99px;background:var(--card)}
+.road a:hover{border-color:var(--c)}
+.shell{display:grid;grid-template-columns:210px 1fr;gap:36px}
+aside nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 90px);display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--line)}
+aside a{text-decoration:none;color:var(--mut);padding:6px 14px;font-size:.92rem;margin-left:-2px;border-left:2px solid transparent}
+aside a.on{color:var(--ink);border-color:var(--c);font-weight:700}
+@media(max-width:900px){.shell{grid-template-columns:1fr}aside{display:none}}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+.f{font-family:'DM Serif Display',Georgia,serif;font-size:1.45rem;text-align:center;padding:14px;background:var(--soft);border-radius:12px;margin:12px 0;overflow-x:auto}
+ol.st{padding-left:20px}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid var(--line);padding:7px 8px;text-align:left}
+.scroll{overflow-x:auto}
+.ctrl{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.ctrl label{display:flex;gap:8px;align-items:center}
+input[type=range]{accent-color:var(--c)}
+.res{background:var(--acc);color:var(--onacc);border-radius:12px;padding:12px 16px;font-weight:700;margin-top:10px;font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;overflow-x:auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:8px 0;padding:10px 16px}
+summary{cursor:pointer;font-weight:700}
+.lv{margin:24px 0 6px;color:var(--mut);font-weight:700}
+.warn{border-left:5px solid var(--c);background:var(--soft);padding:12px 16px;border-radius:0 12px 12px 0;margin:10px 0}
+.ok{color:var(--t);font-weight:700}.no{color:var(--c);font-weight:700}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{border-color:var(--t);background:color-mix(in srgb,var(--t) 20%,var(--card))}
+.opt.wrong{border-color:var(--c);background:color-mix(in srgb,var(--c) 20%,var(--card))}
+.fld.n{width:74px}
+footer{padding:44px 0 60px}
+.nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mut);margin-top:20px}
+svg text{font-family:'DM Sans',sans-serif;font-size:15px;fill:#fff;font-weight:700}
+@media print{header,aside,.tools,.dl,#gen,#sim{display:none}.shell{display:block}}
+</style>
+</head>
+<body>
+<header>
+<div class="bar">
+<div><div class="logo">U. E. “Guayaquil” · Álgebra</div><span class="blk">Bloque 1 · Header y barra de progreso</span> <span class="crumbs">Matemáticas › Álgebra › Productos notables › Binomios con un término en común</span></div>
+<div class="tools"><input id="q" type="search" placeholder="Buscar concepto…" aria-label="Buscar concepto"><button class="btn" id="th" aria-label="Cambiar tema">Claro / Oscuro</button></div>
+</div>
+<div id="prog"></div>
+</header>
+
+<div class="wrap">
+<!-- BLOQUE 2 -->
+<div class="hero">
+<span class="blk">Bloque 2 · Hero: presentación del tema</span>
+<h1>Binomios con un término en común</h1>
+<p class="sub">Multiplica (x + 3)(x − 2) sin desarrollar nada: suma los números, multiplícalos y escribe el resultado directo.</p>
+<div class="big">(x + <span class="co">a</span>)(x + <span class="te">b</span>) = <span class="pl">x²</span> + <span class="co">(a + b)</span>x + <span class="te">ab</span></div>
+<div class="metrics"><div><b>40 min</b><span>tiempo de estudio</span></div><div><b>Intermedio</b><span>dificultad</span></div><div><b>5 pasos</b><span>ruta de dominio</span></div></div>
+<div>Prerrequisitos: <span class="tag">Ley de signos</span><span class="tag">Propiedad distributiva</span><span class="tag">Potencias</span><span class="tag">Fracciones</span></div>
+<ol class="road"><li><a href="#base">1 · Base: signos</a></li><li><a href="#teoria">2 · Teoría y áreas</a></li><li><a href="#sim">3 · Simulador</a></li><li><a href="#ejercicios">4 · Ejercicios</a></li><li><a href="#eval">5 · Evaluación</a></li></ol>
+<a class="pri" href="#base">Comenzar lección</a>
+</div>
+
+<div class="shell">
+<aside><nav id="side">
+<a href="#base">3 · Base atómica</a><a href="#teoria">4 · Marco teórico</a><a href="#sim">5 · Simulador</a><a href="#ejercicios">6 · Ejercicios</a><a href="#eval">7 · Práctica y test</a><a href="#recursos">8 · Recursos</a>
+</nav></aside>
+<main>
+<!-- BLOQUE 3 -->
+<section id="base">
+<span class="blk">Bloque 3 · Fundamentación atómica</span>
+<h2>Base: la ley de los signos</h2>
+<div class="grid">
+<div class="card"><h3>Concepto</h3>
+<p>Este tema se resuelve con dos operaciones: sumar y multiplicar números con signo. Si fallas el signo, fallas todo.</p>
+<div class="f">(+)(+) = + &nbsp; (−)(−) = + &nbsp; (+)(−) = − &nbsp; (−)(+) = −</div></div>
+<div class="card"><h3>Algoritmo para sumar</h3>
+<ol class="st"><li><b>Signos iguales:</b> suma los valores y conserva el signo. −4 − 3 = −7.</li><li><b>Signos diferentes:</b> resta los valores y pon el signo del número mayor. −8 + 3 = −5.</li><li>Para multiplicar usa la ley de arriba.</li></ol>
+<p><b>Ejemplo flash:</b> 4 + 3 = 7 y (−6)(2) = <span class="ok">−12</span>.</p></div>
+</div>
+</section>
+
+<!-- BLOQUE 4 -->
+<section id="teoria">
+<span class="blk">Bloque 4 · Marco teórico y modelo conceptual</span>
+<h2>Marco teórico</h2>
+<div class="grid">
+<div class="card"><h3>Definición formal</h3>
+<p>Es el producto de dos binomios que comparten un término. <b>x</b> es el término común; <b>a</b> y <b>b</b> son los no comunes, con su signo.</p>
+<div class="f">(x + a)(x + b) = x² + (a + b)x + ab</div>
+<p><b>Regla verbal:</b> el cuadrado del común, más la suma de los no comunes por el común, más el producto de los no comunes.</p></div>
+<div class="card" style="text-align:center"><h3>Modelo de áreas</h3>
+<svg viewBox="0 0 270 250" role="img" aria-label="Rectángulo de lados x más a y x más b dividido en cuatro áreas" style="max-width:290px;width:100%">
+<rect x="20" y="20" width="150" height="150" fill="#3b2470"/><text x="85" y="102">x²</text>
+<rect x="170" y="20" width="70" height="150" fill="#d9452e"/><text x="192" y="102">ax</text>
+<rect x="20" y="170" width="150" height="60" fill="#d9452e"/><text x="85" y="206">bx</text>
+<rect x="170" y="170" width="70" height="60" fill="#0f7f7a"/><text x="196" y="206">ab</text>
+</svg>
+<p>Ancho total x + a, alto total x + b. Al sumar las 4 áreas: x² + ax + bx + ab.</p></div>
+</div>
+<div class="card" style="margin-top:20px"><h3>Cómo reconocerlo (3 condiciones)</h3>
+<ol class="st"><li><b>Dos binomios</b> son factores entre paréntesis.</li><li><b>Un término común:</b> una variable o término idéntico en ambos (ej. x).</li><li><b>Términos no comunes:</b> los otros dos son diferentes, con signo + o −.</li></ol>
+<div class="scroll"><table><tr><th>Sección</th><th>Ancho</th><th>Alto</th><th>Área</th></tr><tr><td>Cuadrado principal</td><td>x</td><td>x</td><td>x²</td></tr><tr><td>Rectángulo A</td><td>a</td><td>x</td><td>ax</td></tr><tr><td>Rectángulo B</td><td>x</td><td>b</td><td>bx</td></tr><tr><td>Rectángulo C</td><td>a</td><td>b</td><td>ab</td></tr></table></div></div>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Caso A · común con exponente</h3><p>Si el común es xⁿ, el cuadrado eleva el exponente al doble.</p><div class="f">(x²+5)(x²−3) = x⁴ + 2x² − 15</div></div>
+<div class="card"><h3>Caso B · común con coeficiente</h3><p>Si el común es cx, el coeficiente también se eleva al cuadrado.</p><div class="f">(3x+4)(3x−1) = 9x² + 9x − 4</div></div>
+</div>
+<div class="grid" style="margin-top:20px">
+<div class="card"><h3>Con fracciones</h3><p>La fórmula funciona igual. Ejemplo:</p><div class="f">(x + ½)(x + ¾) = x² + <sup>5</sup>⁄<sub>4</sub>x + <sup>3</sup>⁄<sub>8</sub></div><p>Suma: ½ + ¾ = 5/4. Producto: ½ · ¾ = 3/8.</p></div>
+<div class="card"><h3>Truco de cálculo mental</h3><p>103 × 105 = (100+3)(100+5)</p><ol class="st"><li>100² = 10 000</li><li>(3+5)·100 = 800</li><li>3·5 = 15</li></ol><p>Suma: <span class="ok">10 815</span>.</p></div>
+</div>
+</section>
+
+<!-- BLOQUE 5 -->
+<section id="sim">
+<span class="blk">Bloque 5 · Demostración e interacción</span>
+<h2>Simulador interactivo</h2>
+<p>Mueve los controles y mira cómo se arma el trinomio con la fórmula.</p>
+<div class="card">
+<div class="ctrl">
+<label>Coeficiente del común: <input type="range" id="sc" min="1" max="4" value="1"> <b id="vc">1</b></label>
+<label>a: <input type="range" id="sa" min="-9" max="9" value="3"> <b id="va">3</b></label>
+<label>b: <input type="range" id="sb" min="-9" max="9" value="-2"> <b id="vb">−2</b></label></div>
+<div class="ctrl"><span>Ejemplos:</span><button class="btn" data-s="1,5,2">(x+5)(x+2)</button><button class="btn" data-s="1,3,-2">(x+3)(x−2)</button><button class="btn" data-s="3,4,-1">(3x+4)(3x−1)</button><button class="btn" data-s="2,-6,-1">(2x−6)(2x−1)</button></div>
+<div id="out" aria-live="polite"></div></div>
+</section>
+
+<!-- BLOQUE 6 -->
+<section id="ejercicios">
+<span class="blk">Bloque 6 · Banco de ejercicios resueltos</span>
+<h2>Ejercicios resueltos</h2>
+<p>Resuélvelos en tu cuaderno y luego abre la solución.</p>
+<div id="ex"></div>
+</section>
+
+<!-- BLOQUE 7 -->
+<section id="eval">
+<span class="blk">Bloque 7 · Práctica, errores comunes y evaluación</span>
+<h2>Errores comunes, práctica y test</h2>
+<div class="warn"><b>Error 1: no elevar el coeficiente.</b> En (3x+4)(3x−1) el primer término es 9x², no 3x².</div>
+<div class="warn"><b>Error 2: sumar mal los no comunes.</b> Con (x−5)(x−2) la suma es −5 − 2 = −7, no 3.</div>
+<div class="warn"><b>Error 3: signo del producto.</b> (−5)(−2) = +10. Menos por menos da más.</div>
+<div class="warn"><b>Error 4: usar la fórmula sin común.</b> En (x+3)(2x+1) los términos x y 2x no son iguales, así que no aplica esta fórmula.</div>
+<div class="card" id="gen" style="margin-top:24px"><h3>Generador de práctica</h3>
+<div class="f" id="gq"></div>
+<div class="ctrl">Resultado: <input class="fld n" id="g1" aria-label="Coeficiente de x²"> x² + <input class="fld n" id="g2" aria-label="Coeficiente de x"> x + <input class="fld n" id="g3" aria-label="Término independiente"></div>
+<p style="color:var(--mut);margin:0 0 10px">Escribe cada número con su signo (por ejemplo −7).</p>
+<div class="ctrl"><button class="btn" id="gc">Comprobar</button><button class="btn" id="gn">Otro ejercicio</button></div><div id="gf"></div></div>
+<div class="card" style="margin-top:20px"><h3>Mini-test diagnóstico</h3><div id="quiz"></div><p id="score" class="ok"></p></div>
+</section>
+</main>
+</div>
+</div>
+
+<!-- BLOQUE 8 -->
+<footer id="recursos"><div class="wrap">
+<span class="blk">Bloque 8 · Footer y recursos</span>
+<h2>Recursos</h2>
+<div class="dl"><button class="btn" onclick="window.print()">Imprimir o guardar la guía en PDF</button></div>
+<div class="card"><b>Hoja de fórmulas</b><div class="f">(x + a)(x + b) = x² + (a + b)x + ab</div><p>Recuerda: cuadrado del común, suma de no comunes por el común, producto de no comunes.</p></div>
+<div class="nav"><span>← Anterior: Cuadrado de un binomio</span><span>Siguiente: Trinomio cuadrado perfecto →</span></div>
+<p style="color:var(--mut);margin-top:24px">Unidad Educativa “Guayaquil” · Matemáticas. Dudas: consulta a tu docente.</p>
+</div></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const SP='⁰¹²³⁴⁵⁶⁷⁸⁹',sup=n=>n===1?'':[...String(n)].map(d=>SP[d]).join(''),N=x=>String(x).replace('-','−');
+const T=(k,n,f)=>{if(!k)return'';const m=Math.abs(k),s=k<0?(f?'−':' − '):(f?'':' + ');return s+(n===0?m:(m===1?'':m)+'x'+sup(n))};
+const P=a=>{let o='',f=true;for(const[k,n]of a){const t=T(k,n,f);if(t){o+=t;f=false}}return o||'0'};
+const fac=(c,n,a)=>`(${P([[c,n],[a,0]])})`;
+function steps(c,n,a,b){const q=c*c,m=c*(a+b),p=a*b;return `<ol class="st"><li>Cuadrado del común: (${P([[c,n]])})² = <span class="pl">${P([[q,2*n]])}</span></li><li>Suma de no comunes: (${N(a)}${b<0?'':'+'}${N(b)})·${P([[c,n]])} = <span class="co">${P([[m,n]])}</span></li><li>Producto de no comunes: (${N(a)})(${N(b)}) = <span class="te">${N(p)}</span></li></ol><div class="res">${fac(c,n,a)}${fac(c,n,b)} = ${P([[q,2*n],[m,n],[p,0]])}</div>`}
+// tema, progreso, búsqueda
+$('th').onclick=()=>{const r=document.documentElement,c=r.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');r.dataset.theme=c==='dark'?'light':'dark'};
+const secs=[...document.querySelectorAll('section')],links=[...document.querySelectorAll('#side a')];
+addEventListener('scroll',()=>{const h=document.documentElement;$('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%';let k=-1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<140)k=i});links.forEach((l,i)=>l.classList.toggle('on',i===k))});
+$('q').addEventListener('keydown',e=>{if(e.key!=='Enter')return;const t=e.target.value.toLowerCase().trim();if(!t)return;const s=[...document.querySelectorAll('section,.hero,footer')].find(x=>x.textContent.toLowerCase().includes(t));if(s)s.scrollIntoView()});
+// simulador
+function sim(){const c=+$('sc').value,a=+$('sa').value,b=+$('sb').value;$('vc').textContent=c;$('va').textContent=N(a);$('vb').textContent=N(b);$('out').innerHTML=`<div class="f">${fac(c,1,a)}${fac(c,1,b)}</div>`+steps(c,1,a,b)+(a+b===0?'<p class="warn">Como a + b = 0, el término central desaparece.</p>':'')}
+['sc','sa','sb'].forEach(i=>$(i).oninput=sim);
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{const[c,a,d]=b.dataset.s.split(',');$('sc').value=c;$('sa').value=a;$('sb').value=d;sim()});sim();
+// ejercicios
+const L=[['Nivel 0 · Signos',[['(−6) + 2','−4','Signos diferentes: 6 − 2 = 4, gana el 6 (negativo).'],['(4)(−1)','−4','Más por menos da menos.'],['(−8)(−4)','32','Menos por menos da más.']]],
+['Nivel 1 · Aplicación directa',[[1,1,5,2],[1,1,4,-1],[1,1,-6,2]]],
+['Nivel 2 · Con coeficiente',[[3,1,-5,-2],[5,1,2,-6],[4,1,3,5]]],
+['Nivel 3 · Exponentes, fracciones y cálculo mental',[[1,4,7,-3],[1,2,-8,-4],[1,5,9,-2],['(x + ½)(x + ¾)','x² + 5/4 x + 3/8','Cuadrado: x². Suma: ½+¾ = 2/4+3/4 = 5/4. Producto: ½·¾ = 3/8.'],['103 × 105','10 815','Escribe (100+3)(100+5): 100² = 10 000; (3+5)·100 = 800; 3·5 = 15. Total 10 815.']]]];
+$('ex').innerHTML=L.map(([t,a])=>`<div class="lv">${t}</div>`+a.map(e=>typeof e[0]==='number'?`<details><summary>Multiplica: ${fac(e[0],e[1],e[2])}${fac(e[0],e[1],e[3])}</summary>${steps(...e)}</details>`:`<details><summary>Resuelve: ${e[0]}</summary><p>${e[2]}</p><div class="res">${e[1]}</div></details>`).join('')).join('');
+// generador
+let cur;const r=()=>{let v=0;while(!v)v=Math.floor(Math.random()*19)-9;return v};
+function gen(){cur={c:1+Math.floor(Math.random()*3),a:r(),b:r()};$('gq').textContent=fac(cur.c,1,cur.a)+fac(cur.c,1,cur.b);['g1','g2','g3'].forEach(i=>$(i).value='');$('gf').textContent=''}
+$('gn').onclick=gen;
+$('gc').onclick=()=>{const{c,a,b}=cur,v=['g1','g2','g3'].map(i=>Number($(i).value.replace('−','-').trim())),w=[c*c,c*(a+b),a*b],ok=v.every((x,i)=>x===w[i]);$('gf').innerHTML=ok?'<span class="ok">Correcto. ¡Muy bien!</span>':`<span class="no">Revisa: cuadrado del común = ${c*c}x², suma de no comunes = ${N(a)}${b<0?'':'+'}${N(b)}, producto = (${N(a)})(${N(b)}).</span>`};gen();
+// test
+const Q=[['(x + 5)(x + 2) =',['x² + 7x + 10','x² + 3x + 10','x² + 7x + 7'],0,'Suma 5+2 = 7 y producto 5·2 = 10.'],['(x − 6)(x + 2) =',['x² − 4x − 12','x² + 4x − 12','x² − 8x − 12'],0,'Suma −6+2 = −4, producto −12.'],['(3x + 4)(3x − 1) =',['9x² + 9x − 4','3x² + 9x − 4','9x² + 3x − 4'],0,'(3x)² = 9x²; (4−1)·3x = 9x; 4·(−1) = −4.'],['(x⁴ + 7)(x⁴ − 3) =',['x⁸ + 4x⁴ − 21','x⁴ + 4x⁴ − 21','x⁸ + 10x⁴ − 21'],0,'(x⁴)² = x⁸; (7−3)x⁴ = 4x⁴; 7·(−3) = −21.']];
+let sc=0,dn=0;$('quiz').innerHTML=Q.map((x,i)=>`<div style="margin-bottom:16px"><b>${i+1}. ${x[0]}</b>${x[1].map((o,j)=>`<button class="btn opt" data-i="${i}" data-j="${j}">${o}</button>`).join('')}<small id="w${i}"></small></div>`).join('');
+$('quiz').onclick=e=>{const b=e.target.closest('.opt');if(!b||b.disabled)return;const i=+b.dataset.i,j=+b.dataset.j,x=Q[i];document.querySelectorAll(`[data-i="${i}"]`).forEach(o=>o.disabled=true);b.classList.add(j===x[2]?'right':'wrong');if(j===x[2])sc++;else document.querySelector(`[data-i="${i}"][data-j="${x[2]}"]`).classList.add('right');$('w'+i).textContent=x[3];if(++dn===Q.length)$('score').textContent=`Resultado: ${sc} de ${Q.length}. ${sc===Q.length?'Dominas el tema.':'Repasa la regla verbal y vuelve a intentarlo.'}`};
+</script>
+</body>
+</html>
